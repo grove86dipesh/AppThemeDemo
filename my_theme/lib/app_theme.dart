@@ -6,7 +6,7 @@ const MaterialColor myColor = MaterialColor(0xFF134E57, <int, Color>{
   200: Color(0xFF95B1B5),
   300: Color(0xFF6B9297),
   400: Color(0xFF4B7A81),
-  500: Color(0xFF2B636B), //warna tombol add
+  500: Color(0xFF2B636B),
   600: Color(0xFF265B63),
   700: Color(0xFF205158),
   800: Color(0xFF1A474E),
@@ -31,7 +31,7 @@ ThemeData light = ThemeData(
     ),
   ),
   checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all<Color>(Color(0xFF134E57))),
+      fillColor: MaterialStateProperty.all<Color>(const Color(0xFF134E57))),
   buttonTheme: const ButtonThemeData(
     buttonColor: Color(0xFFD7BA46),
   ),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_demo_project/src/injection/dependency_injection.dart';
 import 'package:my_theme/app_theme_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 import 'component_settings.dart';
 import 'locators.dart';
@@ -40,10 +41,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppThemeProvider>(
       builder: (context, AppThemeProvider notifier, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: notifier.isDark,
-          home: ComponentSetting(),
+        return Sizer(
+          builder: (BuildContext context, Orientation orientation,
+              DeviceType deviceType) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: notifier.isDark,
+              home: const ComponentSetting(),
+            );
+          },
         );
       },
     );

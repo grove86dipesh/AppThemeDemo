@@ -1,15 +1,13 @@
 import 'dart:async';
-import 'dart:convert';
+
 import 'package:flutter_http/flutter_http.dart';
 import 'package:flutter_http/model/api_response.dart';
 import 'package:flutter_http/utils/common_utils.dart';
-import 'package:http/http.dart' as http;
 
 import 'contact_data.dart';
 
 class RandomUserRepository implements ContactRepository {
   static const _kRandomUserUrl = 'http://api.randomuser.me/?results=50';
-  final JsonDecoder _decoder = const JsonDecoder();
 
   @override
   Future<List<Contact>> fetch() async {

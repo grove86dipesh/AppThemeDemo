@@ -28,13 +28,15 @@ class UserDataService extends ChangeNotifier{
     notifyListeners();
 
     final result = await http.get(Uri.parse(userUrl)).catchError((e) {
-      print('Error Fetching Users');
+      if (kDebugMode) {
+        print('Error Fetching Users');
+      }
     });
 
     if(result.statusCode == 200){
       Map<String, dynamic> data = json.decode(result.body);
-      var _users = data["data"];
-      if (_users != null) {
+      var users = data["data"];
+      if (users != null) {
         users = User.fromJson(data).data;
       }
       _isLoading = false;

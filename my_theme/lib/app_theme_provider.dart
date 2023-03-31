@@ -34,6 +34,9 @@ class AppThemeProvider extends ChangeNotifier {
     _loadFromPrefs();
   }
 
+  int getSelectedTheme(){
+    return _themeValue;
+  }
   toggleTheme(int themeValue) {
     _themeValue = themeValue;
     _saveToPrefs(themeValue);
